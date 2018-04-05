@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mina.gptask.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signin_tittle"
+        android:text="SIGN IN TO START"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6E6E6"
+        android:id="@+id/layoutEditText"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/signin_tittle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/loginEmailField"
+            android:fontFamily=" Afta Sans"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerHorizontal="true"
+            android:hint="Email"
+            android:padding="15dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/loginPasswordField"
+            android:fontFamily=" Afta Sans"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/loginEmailField"
+            android:layout_centerHorizontal="true"
+            android:hint="Password"
+            android:padding="15dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:id="@+id/loginBtn"
+            android:layout_below="@+id/passwordField"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dontHaveAccount"
+                android:layout_below="@+id/loginBtn"
+                android:text="Don't have an account ?"
+                android:textSize="15dp"
+                android:fontFamily=" Afta Sans"
+                android:textAlignment="center"
+                android:layout_weight="1"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Sign up"
+                android:fontFamily=" Afta Sans"
+                android:id="@+id/newAccountBtn"
+                android:layout_below="@+id/dontHaveAccount"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="1"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
