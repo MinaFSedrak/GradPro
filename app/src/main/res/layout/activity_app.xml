@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_app"
     android:layout_width="match_parent"
@@ -10,15 +11,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mahmoudamin.gradpro.App">
 
-    <TextView
-        android:text="App"
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/captureBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:text="Capture Image" />
+
+    <ImageView
+        android:id="@+id/cameraIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginTop="64dp" />
+        android:layout_centerHorizontal="true"
+        android:minHeight="300dp"
+        android:minWidth="300dp"
+        app:srcCompat="@drawable/cast_abc_scrubber_control_off_mtrl_alpha" />
 </RelativeLayout>
