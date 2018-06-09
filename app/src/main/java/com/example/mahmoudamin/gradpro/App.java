@@ -55,6 +55,12 @@ public class App extends AppCompatActivity {
                         launchCamera();
                 }
         });
+
+        Thread testThread = new Thread(new Server(getApplicationContext()));
+        testThread.start();
+
+//        Client client = new Client();
+//        client.execute("Hello World");
     }
 
 
@@ -84,19 +90,23 @@ public class App extends AppCompatActivity {
             capturedImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
             byte[] byteArray = stream.toByteArray();
 
-            mProgress.setMessage("Uploading Captured Image");
+            mProgress.setMessage("Sending Image via TCP");
             mProgress.show();
             mProgress.setCancelable(false);
             mProgress.setCanceledOnTouchOutside(false);
 
-            filePath.putBytes(byteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    mProgress.dismiss();
-                    cameraIV.setImageBitmap(capturedImage);
-                    Toast.makeText(getApplicationContext(),"Image Uploaded successfully",Toast.LENGTH_LONG);
-                }
-            });
+
+            Client client = new Client(getApplicationContext(), mProgress);
+            client.execute(byteArray);
+
+//            filePath.putBytes(byteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                @Override
+//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                    mProgress.dismiss();
+//                    cameraIV.setImageBitmap(capturedImage);
+//                    Toast.makeText(getApplicationContext(),"Image Uploaded successfully",Toast.LENGTH_LONG);
+//                }
+//            });
 
 
         }
